@@ -1,0 +1,7 @@
+G_N
+MiddleLeafAngle
+G_LA
+EarRowNumber
+G_DW
+X.5962..L.lysine.2..17.643.
+X.5984..fructose.1..17.18..s100
