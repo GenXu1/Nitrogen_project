@@ -1,0 +1,2 @@
+vcftools --vcf /common/jyanglab/shared/Gen_Xu/282_panel_V4_from_hapmap3_12_21_2020/hmp321_282_agpv4_maf005_miss03.vcf --weir-fst-pop early_lines.txt --weir-fst-pop late_lines.txt --out early_late_site > site.log
+vcftools --vcf /common/jyanglab/shared/Gen_Xu/282_panel_V4_from_hapmap3_12_21_2020/hmp321_282_agpv4_maf005_miss03.vcf --weir-fst-pop early_lines.txt --weir-fst-pop late_lines.txt --fst-window-size 50000 --fst-window-step 5000 --out early_late_50K
