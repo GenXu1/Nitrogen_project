@@ -1,0 +1,12 @@
+Term	Database	ID	Input number	Background number	P-Value	Corrected P-Value	Input	Hyperlink	Enrich_ratio	Cluster	Cluster_size	Cluster_P-Value_median
+Fatty acid biosynthesis	KEGG PATHWAY	zma00061	1	57	0.0181044992344	0.0748933172542	100281546	http://www.genome.jp/kegg-bin/show_pathway?zma00061/zma:100281546%09red	0.0175438596491228	1	4	0.0231895473586
+Fatty acid degradation	KEGG PATHWAY	zma00071	1	59	0.0187233293135	0.0748933172542	100281546	http://www.genome.jp/kegg-bin/show_pathway?zma00071/zma:100281546%09red	0.0169491525423729	1	4	0.0231895473586
+Fatty acid metabolism	KEGG PATHWAY	zma01212	1	88	0.0276557654037	0.0778413682389	100281546	http://www.genome.jp/kegg-bin/show_pathway?zma01212/zma:100281546%09red	0.0113636363636364	1	4	0.0231895473586
+Peroxisome	KEGG PATHWAY	zma04146	1	110	0.0343816664864	0.0778413682389	100281546	http://www.genome.jp/kegg-bin/show_pathway?zma04146/zma:100281546%09red	0.00909090909090909	1	4	0.0231895473586
+Pyruvate metabolism	KEGG PATHWAY	zma00620	1	118	0.0368167188276	0.0778413682389	100282820	http://www.genome.jp/kegg-bin/show_pathway?zma00620/zma:100282820%09red	0.00847457627118644	2	7	0.102727243474
+Purine metabolism	KEGG PATHWAY	zma00230	1	141	0.0437857696344	0.0778413682389	100282820	http://www.genome.jp/kegg-bin/show_pathway?zma00230/zma:100282820%09red	0.00709219858156028	2	7	0.102727243474
+Glycolysis / Gluconeogenesis	KEGG PATHWAY	zma00010	1	180	0.0554959446359	0.0887935114174	100282820	http://www.genome.jp/kegg-bin/show_pathway?zma00010/zma:100282820%09red	0.00555555555555556	2	7	0.102727243474
+Biosynthesis of amino acids	KEGG PATHWAY	zma01230	1	342	0.102727243474	0.125828659023	100282820	http://www.genome.jp/kegg-bin/show_pathway?zma01230/zma:100282820%09red	0.00292397660818713	2	7	0.102727243474
+Carbon metabolism	KEGG PATHWAY	zma01200	1	353	0.105853414066	0.125828659023	100282820	http://www.genome.jp/kegg-bin/show_pathway?zma01200/zma:100282820%09red	0.0028328611898017	2	7	0.102727243474
+Metabolic pathways	KEGG PATHWAY	zma01100	2	2943	0.236296385558	0.252049477928	100282820|100281546	http://www.genome.jp/kegg-bin/show_pathway?zma01100/zma:100282820%09red/zma:100281546%09red	0.000679578661230037	2	7	0.102727243474
+Biosynthesis of secondary metabolites	KEGG PATHWAY	zma01110	1	1499	0.381432541781	0.381432541781	100282820	http://www.genome.jp/kegg-bin/show_pathway?zma01110/zma:100282820%09red	0.00066711140760507	2	7	0.102727243474

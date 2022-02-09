@@ -1,0 +1,45 @@
+---
+title: "Check Haplotype LMM results"
+output: NULL
+author: Jinliang Yang
+date: 08-27-2021
+---
+
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_knit$set(root.dir=normalizePath('../../')) 
+#library(tidyverse)
+```
+
+## LMM haplotype
+
+
+```{r}
+library("data.table")
+snp <- fread("data/09_282_block_hap/block_hap_association/set_0_1_allele/3PC_block_GWAS_0_1_allele_res.txt", data.table = FALSE)
+
+snp <- snp[order(snp$p_wald),]
+
+snp$b <- gsub("_.*", "", snp$rs)
+snp$logp <- -log10(snp$p_wald)
+s10 <- subset(snp, logp > 3)
+
+
+s4 <- subset(snp, b == "BLK4")
+```
+
+
+```{r}
+snp <- fread("data/09_282_block_hap/block_hap_association/set_allele_missing/3PC_block_GWAS_res.txt", data.table = FALSE)
+
+snp <- snp[order(snp$p_wald),]
+
+snp$b <- gsub("_.*", "", snp$rs)
+snp$logp <- -log10(snp$p_wald)
+s10 <- subset(snp, logp > 3)
+
+
+s4 <- subset(snp, b == "BK4" & rs %in% "BK4_1_3")
+```
+

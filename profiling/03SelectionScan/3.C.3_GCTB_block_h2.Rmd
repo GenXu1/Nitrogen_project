@@ -1,0 +1,75 @@
+---
+title: "GCTB results: Block heritablity"
+output: NULL
+author: Jinliang Yang
+date: 08-20-2021
+---
+
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_knit$set(root.dir=normalizePath('../../')) 
+#library(tidyverse)
+```
+
+`/common/jyanglab/shared/Gen_Xu/282_GCTB`:
+drwxrwsrwx 2 gxu6 222 Aug 20 15:32 37Agronomic_traits_public/
+drwxrwsrwx 4 gxu6   2 Aug 20 15:27 leaf_nutrient_traits_Field/
+drwxrwsrwx 4 gxu6   2 Aug 20 15:36 microbe_from_Mike/
+drwxrwsrwx 2 gxu6  72 Aug 20 15:34 Yield_traits_from_Semra/
+
+
+```{r}
+lbp <- 47000000
+rbp <- 49000000
+
+
+snp <- list.files(path, pattern="snpRes", full.names = TRUE)
+
+library("data.table")
+get_gctb_parres <- function(path="/common/jyanglab/shared/Gen_Xu/282_GCTB/leaf_nutrient_traits_Field/HN",
+                            lbp=47000000, rbp=49000000, topsnp=1000){
+  # df: must contain "FID" (family id), "IID" (individual id)
+  # cols: the idx of the phenotype columns
+  
+  files <- list.files(path, pattern="snpRes", full.names = TRUE)
+  message(sprintf("###>>> [%s] files detected!", length(files)))
+  
+  res <- data.frame()
+  for(i in 1:length(files)){
+    ### read in the file by skip the first two rows:
+    snp <- fread(files[i], data.table=FALSE)
+    snp <- snp[order(abs(snp$A1Effect), decreasing = TRUE), ]
+    snp <- snp[1:topsnp, ]
+    snp$order <- 1:nrow(snp)
+    
+    sub <- subset(snp, Chrom == 5 & Position > lbp & Position < rbp)
+    if(nrow(sub) >0){
+      sub$file <- files[i]
+      res <- rbind(res, sub)
+    }
+  }
+  res$file <- gsub(".*\\/|.snpRes", "", res$file)
+  return(res)
+}
+
+df2 <- get_gctb_parres(path="/common/jyanglab/shared/Gen_Xu/282_GCTB/leaf_nutrient_traits_Field/LN",
+                            lbp=47000000, rbp=49000000, topsnp=1000)
+
+t37 <- get_gctb_parres(path="/common/jyanglab/shared/Gen_Xu/282_GCTB/37Agronomic_traits_public",
+                            lbp=47000000, rbp=49000000, topsnp=1000)
+
+yct <- get_gctb_parres(path="/common/jyanglab/shared/Gen_Xu/282_GCTB/Yield_traits_from_Semra",
+                            lbp=47000000, rbp=49000000, topsnp=1000)
+```
+
+
+
+
+
+
+
+
+
+
+

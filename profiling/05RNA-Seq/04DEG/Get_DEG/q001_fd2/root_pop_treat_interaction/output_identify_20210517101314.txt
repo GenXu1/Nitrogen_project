@@ -1,0 +1,21 @@
+##Databases: KEGG PATHWAY, Gene Ontology
+##Statistical test method: hypergeometric test / Fisher's exact test
+##FDR correction method: Benjamini and Hochberg
+
+#Term	Database	ID	Input number	Background number	P-Value	Corrected P-Value	Input	Hyperlink
+Plant hormone signal transduction	KEGG PATHWAY	zma04075	2	368	0.00297197404419	0.0178318442652	103650192|100286028	http://www.genome.jp/kegg-bin/show_pathway?zma04075/zma:103650192%09red/zma:100286028%09red
+
+--------------------
+
+#Term	Database	ID	Input number	Background number	P-Value	Corrected P-Value	Input	Hyperlink
+
+--------------------
+
+#Term	Database	ID	Input number	Background number	P-Value	Corrected P-Value	Input	Hyperlink
+regulation of transcription, DNA-templated	Gene Ontology	GO:0006355	1	119	0.0266588616474	0.0462310192307	103650192	http://amigo.geneontology.org/amigo/term/GO:0006355
+sequence-specific DNA binding	Gene Ontology	GO:0043565	1	129	0.0288512927149	0.0462310192307	103650192	http://amigo.geneontology.org/amigo/term/GO:0043565
+DNA-binding transcription factor activity	Gene Ontology	GO:0003700	1	138	0.0308206794871	0.0462310192307	103650192	http://amigo.geneontology.org/amigo/term/GO:0003700
+plasma membrane	Gene Ontology	GO:0005886	1	368	0.0799456416268	0.0959347699521	100280431	http://amigo.geneontology.org/amigo/term/GO:0005886
+nucleus	Gene Ontology	GO:0005634	1	987	0.201224139739	0.201224139739	103650192	http://amigo.geneontology.org/amigo/term/GO:0005634
+
+--------------------

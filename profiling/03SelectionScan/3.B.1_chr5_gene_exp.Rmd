@@ -1,0 +1,95 @@
+---
+title: "Chr5 gene expression level"
+output: NULL
+author: Jinliang Yang
+date: 11-23-2020
+---
+
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_knit$set(root.dir=normalizePath('../../')) 
+#library(tidyverse)
+```
+
+## XP-CLR
+
+Find the interesting candiate on Chr5 Zm00001d014451
+GRMZM2G057459
+
+```{r}
+# /common/jyanglab/shared/dbcenter/Kremling_Nature3RNASeq282_March2018/Expression_matrix/df_STAR_HTSeq_counts_B73_match_based_on_genet_dist_DESeq2_normed_fpm_rounded_origNames_and_Altnames.txt
+library("data.table")
+rna <- fread("/common/jyanglab/shared/dbcenter/Kremling_Nature3RNASeq282_March2018/Expression_matrix/df_STAR_HTSeq_counts_B73_match_based_on_genet_dist_DESeq2_normed_fpm_rounded_origNames_and_Altnames.txt", header=TRUE, data.table=FALSE)
+
+idx <- which(names(rna) %in% c("GRMZM2G057459", "GRMZM2G148807"))
+myr <- rna[, c(1:9, idx)]
+
+write.table(myr, "cache/goi_chr5.csv", sep=",", row.names = FALSE, quote=FALSE)
+```
+
+
+```{r}
+library("data.table")
+
+chr5 <- fread("cache/goi_chr5.csv", header=TRUE, data.table=FALSE)
+table(chr5$TissueWODate)
+```
+
+Compute average expression level by tissue
+```{r}
+library(tidyr)
+library(plyr)
+
+sub <- chr5[, c(3, 10:11)]
+df <- gather(sub, key="gene", value="fpm", 2:ncol(sub))
+#dim(subset(df, TissueWODate %in% "LMAD" & gene %in% "AC148152.3_FG008"))
+# 210   3
+
+# average gene expression across 200 lines by tissue type
+avg <- ddply(df, .(gene , TissueWODate), summarise,
+                  avg = mean(fpm, na.rm=TRUE))
+
+```
+
+
+# Plot the results
+
+```{r}
+library(ggplot2)
+
+avg$TissueWODate <- factor(avg$TissueWODate, levels = c( "GRoot", "GShoot", "L3Base", "L3Mid", "L3Tip", "LMAD", "LMAN", "Kern"),
+                    labels =c( "Germinating Root", "Germinating Shoot", "Leaf 3 base","Leaf 3 Middle", "Leaf 3 tip", "Adult leaf during the day", "Adult leaf at night","Kernels after pollination"))
+
+# df2 <- subset(avg, gene %in% c("GRMZM2G140559", "GRMZM2G054225", "RMZM2G037048", "GRMZM2G020148", "GRMZM2G000231"))
+
+
+p <- ggplot(avg, aes(x=TissueWODate, y=avg, group=gene, color=gene)) +
+    geom_line() + 
+    geom_point() +
+    xlab("") +
+    ylab("avg(FPM)") +
+    ggtitle("") +
+    theme_classic() +
+    labs(color = "") +
+    #scale_y_continuous(limits = c(0, 2)) +
+    #geom_vline(xintercept=0, linetype="dashed", color = "red") +
+    theme(plot.title = element_text(size=20, face = "bold"), 
+          axis.text=element_text(size=16, face="bold"),
+          strip.text.x = element_text(size = 16, face = "bold"),
+          axis.title=element_text(size=18, face="bold"),
+          #axis.text.x = element_text(angle = 20, hjust=0.6),
+          legend.position = c(0.8, 0.95), 
+          axis.text.x = element_text(angle = 20, hjust=0.6),
+          legend.title = element_text(size=18, face="bold"),
+          legend.text = element_text(size=18))
+p
+
+
+pdf("graphs/GRMZM2G057459_fpm_by_tissue.pdf", width = 8, height= 6)
+p
+dev.off()
+```
+
+
+

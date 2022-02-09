@@ -1,0 +1,10 @@
+Posterior statistics from MCMC samples:
+
+              Mean            SD             
+        Pi    0.012449        0.008762       
+    NnzSnp    9325.241211     6563.229004    
+   SigmaSq    0.000001        0.000001       
+         S    0.074533        0.933524       
+    ResVar    0.000082        0.000037       
+    GenVar    0.000358        0.000043       
+       hsq    0.812616        0.085039       

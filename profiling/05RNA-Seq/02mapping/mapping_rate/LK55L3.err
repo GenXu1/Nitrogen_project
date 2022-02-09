@@ -1,0 +1,173 @@
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.1
+
+//================================= setting ==================================\\
+||                                                                            ||
+|| Function      : Read alignment (RNA-Seq)                                   ||
+|| Input file 1  : LK55L3_clean_R1.fastq.gz                                   ||
+|| Input file 2  : LK55L3_clean_R2.fastq.gz                                   ||
+|| Output file   : LK55L3.bam (BAM), Sorted                                   ||
+|| Index name    : maize-genome-V4                                            ||
+||                                                                            ||
+||                    ------------------------------------                    ||
+||                                                                            ||
+||                               Threads : 16                                 ||
+||                          Phred offset : 33                                 ||
+||               # of extracted subreads : 10                                 ||
+||                        Min read1 vote : 3                                  ||
+||                        Min read2 vote : 1                                  ||
+||                     Max fragment size : 600                                ||
+||                     Min fragment size : 50                                 ||
+||                        Max mismatches : 3                                  ||
+||                      Max indel length : 5                                  ||
+||            Report multi-mapping reads : no                                 ||
+|| Max alignments per multi-mapping read : 1                                  ||
+||                       Read group name : LK55L3                             ||
+||                                                                            ||
+\\============================================================================//
+
+//================ Running (23-Apr-2021 17:58:59, pid=924694) ================\\
+||                                                                            ||
+|| Check the input reads.                                                     ||
+|| The input file contains base space reads.                                  ||
+|| Initialise the memory objects.                                             ||
+|| Estimate the mean read length.                                             ||
+|| The range of Phred scores observed in the data is [2,37]                   ||
+|| Create the output BAM file.                                                ||
+|| Check the index.                                                           ||
+|| Init the voting space.                                                     ||
+|| Global environment is initialised.                                         ||
+|| Load the 1-th index block...                                               ||
+|| The index block has been loaded.                                           ||
+|| Start read mapping in chunk.                                               ||
+||    0% completed, 0.5 mins elapsed, rate=74.3k fragments per second         ||
+||    7% completed, 0.7 mins elapsed, rate=120.3k fragments per second        ||
+||   Estimated fragment length : 290 bp                                       ||
+||    9% completed, 0.8 mins elapsed, rate=51.1k fragments per second         ||
+||    9% completed, 0.8 mins elapsed, rate=52.4k fragments per second         ||
+||   10% completed, 0.8 mins elapsed, rate=53.7k fragments per second         ||
+||   10% completed, 0.8 mins elapsed, rate=55.0k fragments per second         ||
+||   11% completed, 0.9 mins elapsed, rate=56.4k fragments per second         ||
+||   11% completed, 0.9 mins elapsed, rate=57.6k fragments per second         ||
+||   12% completed, 0.9 mins elapsed, rate=58.8k fragments per second         ||
+||   12% completed, 0.9 mins elapsed, rate=59.9k fragments per second         ||
+||   12% completed, 0.9 mins elapsed, rate=60.9k fragments per second         ||
+|| Start read mapping in chunk.                                               ||
+||   13% completed, 1.0 mins elapsed, rate=103.3k fragments per second        ||
+||   20% completed, 1.2 mins elapsed, rate=111.6k fragments per second        ||
+||   22% completed, 1.3 mins elapsed, rate=73.6k fragments per second         ||
+||   23% completed, 1.4 mins elapsed, rate=74.1k fragments per second         ||
+||   23% completed, 1.4 mins elapsed, rate=74.5k fragments per second         ||
+||   24% completed, 1.4 mins elapsed, rate=74.9k fragments per second         ||
+||   24% completed, 1.4 mins elapsed, rate=75.2k fragments per second         ||
+||   24% completed, 1.4 mins elapsed, rate=75.6k fragments per second         ||
+||   25% completed, 1.5 mins elapsed, rate=76.0k fragments per second         ||
+||   25% completed, 1.5 mins elapsed, rate=76.5k fragments per second         ||
+||   26% completed, 1.5 mins elapsed, rate=76.8k fragments per second         ||
+|| Start read mapping in chunk.                                               ||
+||   27% completed, 1.6 mins elapsed, rate=103.0k fragments per second        ||
+||   33% completed, 1.8 mins elapsed, rate=108.3k fragments per second        ||
+||   36% completed, 1.9 mins elapsed, rate=82.5k fragments per second         ||
+||   36% completed, 1.9 mins elapsed, rate=82.7k fragments per second         ||
+||   36% completed, 1.9 mins elapsed, rate=82.8k fragments per second         ||
+||   37% completed, 2.0 mins elapsed, rate=82.9k fragments per second         ||
+||   37% completed, 2.0 mins elapsed, rate=83.0k fragments per second         ||
+||   38% completed, 2.0 mins elapsed, rate=83.2k fragments per second         ||
+||   38% completed, 2.0 mins elapsed, rate=83.3k fragments per second         ||
+||   39% completed, 2.0 mins elapsed, rate=83.4k fragments per second         ||
+||   39% completed, 2.1 mins elapsed, rate=83.6k fragments per second         ||
+|| Start read mapping in chunk.                                               ||
+||   40% completed, 2.2 mins elapsed, rate=102.1k fragments per second        ||
+||   47% completed, 2.4 mins elapsed, rate=105.8k fragments per second        ||
+||   49% completed, 2.5 mins elapsed, rate=86.5k fragments per second         ||
+||   49% completed, 2.5 mins elapsed, rate=86.6k fragments per second         ||
+||   50% completed, 2.5 mins elapsed, rate=86.6k fragments per second         ||
+||   50% completed, 2.6 mins elapsed, rate=86.6k fragments per second         ||
+||   51% completed, 2.6 mins elapsed, rate=86.6k fragments per second         ||
+||   51% completed, 2.6 mins elapsed, rate=86.6k fragments per second         ||
+||   52% completed, 2.6 mins elapsed, rate=86.7k fragments per second         ||
+||   52% completed, 2.6 mins elapsed, rate=86.7k fragments per second         ||
+||   53% completed, 2.7 mins elapsed, rate=86.8k fragments per second         ||
+|| Start read mapping in chunk.                                               ||
+||   53% completed, 2.8 mins elapsed, rate=101.0k fragments per second        ||
+||   60% completed, 3.0 mins elapsed, rate=103.9k fragments per second        ||
+||   62% completed, 3.1 mins elapsed, rate=88.6k fragments per second         ||
+||   63% completed, 3.1 mins elapsed, rate=88.6k fragments per second         ||
+||   63% completed, 3.1 mins elapsed, rate=88.5k fragments per second         ||
+||   64% completed, 3.1 mins elapsed, rate=88.5k fragments per second         ||
+||   64% completed, 3.2 mins elapsed, rate=88.5k fragments per second         ||
+||   64% completed, 3.2 mins elapsed, rate=88.5k fragments per second         ||
+||   65% completed, 3.2 mins elapsed, rate=88.5k fragments per second         ||
+||   65% completed, 3.2 mins elapsed, rate=88.5k fragments per second         ||
+||   66% completed, 3.2 mins elapsed, rate=88.6k fragments per second         ||
+||   66% completed, 3.3 mins elapsed, rate=88.6k fragments per second         ||
+|| Start read mapping in chunk.                                               ||
+||   67% completed, 3.4 mins elapsed, rate=100.2k fragments per second        ||
+||   74% completed, 3.6 mins elapsed, rate=102.6k fragments per second        ||
+||   76% completed, 3.7 mins elapsed, rate=89.7k fragments per second         ||
+||   76% completed, 3.7 mins elapsed, rate=89.7k fragments per second         ||
+||   77% completed, 3.7 mins elapsed, rate=89.6k fragments per second         ||
+||   77% completed, 3.8 mins elapsed, rate=89.6k fragments per second         ||
+||   78% completed, 3.8 mins elapsed, rate=89.6k fragments per second         ||
+||   78% completed, 3.8 mins elapsed, rate=89.6k fragments per second         ||
+||   79% completed, 3.8 mins elapsed, rate=89.6k fragments per second         ||
+||   79% completed, 3.9 mins elapsed, rate=89.6k fragments per second         ||
+||   80% completed, 3.9 mins elapsed, rate=89.6k fragments per second         ||
+|| Start read mapping in chunk.                                               ||
+||   80% completed, 4.0 mins elapsed, rate=99.3k fragments per second         ||
+||   87% completed, 4.2 mins elapsed, rate=101.4k fragments per second        ||
+||   89% completed, 4.3 mins elapsed, rate=90.4k fragments per second         ||
+||   90% completed, 4.3 mins elapsed, rate=90.3k fragments per second         ||
+||   90% completed, 4.4 mins elapsed, rate=90.3k fragments per second         ||
+||   91% completed, 4.4 mins elapsed, rate=90.3k fragments per second         ||
+||   91% completed, 4.4 mins elapsed, rate=90.2k fragments per second         ||
+||   92% completed, 4.4 mins elapsed, rate=90.2k fragments per second         ||
+||   92% completed, 4.5 mins elapsed, rate=90.2k fragments per second         ||
+||   93% completed, 4.5 mins elapsed, rate=90.1k fragments per second         ||
+||   93% completed, 4.5 mins elapsed, rate=90.1k fragments per second         ||
+|| Start read mapping in chunk.                                               ||
+||   94% completed, 4.6 mins elapsed, rate=98.4k fragments per second         ||
+||   98% completed, 4.7 mins elapsed, rate=89.8k fragments per second         ||
+||   98% completed, 4.8 mins elapsed, rate=89.7k fragments per second         ||
+||   98% completed, 4.8 mins elapsed, rate=89.7k fragments per second         ||
+||   98% completed, 4.8 mins elapsed, rate=89.7k fragments per second         ||
+||   99% completed, 4.8 mins elapsed, rate=89.6k fragments per second         ||
+||   99% completed, 4.8 mins elapsed, rate=89.6k fragments per second         ||
+||   99% completed, 4.8 mins elapsed, rate=89.6k fragments per second         ||
+||   99% completed, 4.8 mins elapsed, rate=89.6k fragments per second         ||
+||   99% completed, 4.8 mins elapsed, rate=89.6k fragments per second         ||
+|| Sort the reads...                                                          ||
+||                                                                            ||
+||                           Completed successfully.                          ||
+||                                                                            ||
+\\====================================    ====================================//
+
+//================================   Summary =================================\\
+||                                                                            ||
+||             Total fragments : 25,997,333                                   ||
+||                      Mapped : 24,653,927 (94.8%)                           ||
+||             Uniquely mapped : 24,653,927                                   ||
+||               Multi-mapping : 0                                            ||
+||                                                                            ||
+||                    Unmapped : 1,343,406                                    ||
+||                                                                            ||
+||             Properly paired : 20,510,951                                   ||
+||         Not properly paired : 4,142,976                                    ||
+||                   Singleton : 2,028,803                                    ||
+||                    Chimeric : 92,755                                       ||
+||       Unexpected strandness : 34,252                                       ||
+||  Unexpected fragment length : 1,954,638                                    ||
+||       Unexpected read order : 32,528                                       ||
+||                                                                            ||
+||                      Indels : 165,327                                      ||
+||                                                                            ||
+||                Running time : 10.2 minutes                                 ||
+||                                                                            ||
+\\============================================================================//
+

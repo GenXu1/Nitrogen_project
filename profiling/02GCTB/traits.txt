@@ -1,0 +1,15 @@
+1	B
+2	Ca
+3	CHL
+4	Cu
+5	DW
+6	Fe
+7	FW
+8	K
+9	LA
+10	Mg
+11	Mn
+12	N
+13	P
+14	S
+15	Zn
